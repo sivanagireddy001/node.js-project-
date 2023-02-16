@@ -26,7 +26,6 @@ jobs:
     - run: |
           npm i
           npm link @angular/cli
-          npm cache clean
           npm install -g @angular/cli
           ng -v
           ng build
