@@ -26,6 +26,8 @@ jobs:
         cache: 'npm'
     - run: node --version
     - run: npm --version
-    - run: npm install
-    - run: node app.js
+           cd .
+    - run: npm i
+    - name: build the project
+    - run: npm run build
     
