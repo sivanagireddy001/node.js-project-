@@ -27,7 +27,6 @@ jobs:
           node --version
           npm --version
           npm i
-          npm install -g @angular/cli
           ng -v
-          ng build -c 
+          ng build 
   
