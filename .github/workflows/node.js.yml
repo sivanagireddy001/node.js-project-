@@ -26,7 +26,7 @@ jobs:
         cache: 'npm'
     - name: Run a multi-line script
     - run: |
-           npm i
+           npm install
            npm run build 
    
     - name: S3 Sync
