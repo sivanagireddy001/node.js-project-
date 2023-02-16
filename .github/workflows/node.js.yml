@@ -14,7 +14,7 @@ jobs:
     strategy:
       matrix:
         node-version: [18.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+        
 
     steps:
      - uses: actions/checkout@v3
@@ -24,12 +24,10 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
      - run: |
-           node --version
-           npm --version
            npm i
            npm run build 
    
-     
+    
      - name: S3 Sync
      - uses: jakejarvis/s3-sync-action@master
        with:
