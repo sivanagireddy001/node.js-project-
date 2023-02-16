@@ -27,7 +27,7 @@ jobs:
     - name: Run a multi-line script
     - run: |
            npm install
-           npm run build 
+           npm run build --if-present
    
     - name: S3 Sync
     - uses: jakejarvis/s3-sync-action@v0.5.1
