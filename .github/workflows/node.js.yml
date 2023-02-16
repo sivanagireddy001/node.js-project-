@@ -30,6 +30,8 @@ jobs:
           npm install -g @angular/cli
           npm install -g @angular-devkit/build-angular
           ng v
-          npm install --save-dev @angular/cli@latest
+          npm run test
+          npm start
+          ng serve
           
   
