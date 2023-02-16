@@ -24,14 +24,14 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - name: Run a multi-line script
+   
     - run: |
            npm install
            npm run build 
    
-  
+    - uses: actions/checkout@master
     - name: S3 Sync
-    - uses: jakejarvis/s3-sync-action@v0.5.1
+    - uses: jakejarvis/s3-sync-action@master
       with:
         args: --acl private --follow-symlinks --delete --exclude '.git/*' --exclude '.github/*'
       env:
