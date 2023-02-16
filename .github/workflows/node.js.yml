@@ -29,5 +29,5 @@ jobs:
           npm i
           npm install -g @angular/cli
           npm install -g @angular-devkit/build-angular
-          
+          ng serve --port 4201
   
