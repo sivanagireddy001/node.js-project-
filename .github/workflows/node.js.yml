@@ -24,7 +24,9 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: |
-          npm i
+          npm install
+          npm install -g @angular/cli
+          ng serve
           ng build 
     
     - name: S3 Sync
