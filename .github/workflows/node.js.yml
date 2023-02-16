@@ -19,23 +19,23 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: set up Node.JS
+    - name: Setup Node.js environment
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+    - name: Run a multi-line script
     - run: |
-           node --version
-           npm --version
-           cd views/
            npm i
-           npm run build --if-present
+           npm run build 
    
-    - uses: actions/checkout@master
-    - uses: jakejarvis/s3-sync-action@master
+    - name: S3 Sync
+    - uses: jakejarvis/s3-sync-action@v0.5.1
       with:
-        args: --acl private --follow-symlinks --delete --exclude '.git*/*'
+        args: --acl private --follow-symlinks --delete --exclude '.git/*' --exclude '.github/*'
       env:
         AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        AWS_REGION: 'ap-south-1'
+        SOURCE_DIR: 'dist'
