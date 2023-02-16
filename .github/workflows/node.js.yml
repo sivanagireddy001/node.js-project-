@@ -9,7 +9,6 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     strategy:
@@ -18,23 +17,23 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
-    - uses: actions/checkout@v3
-    - name: Setup Node.js environment
-      uses: actions/setup-node@v3
-      with:
+     - uses: actions/checkout@v3
+     - name: Setup Node.js environment
+     - uses: actions/setup-node@v3
+       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
    
-    - run: |
+     - run: |
            npm install
            npm run build 
    
-    - uses: actions/checkout@master
-    - name: S3 Sync
-    - uses: jakejarvis/s3-sync-action@master
-      with:
+     
+     - name: S3 Sync
+     - uses: jakejarvis/s3-sync-action@master
+       with:
         args: --acl private --follow-symlinks --delete --exclude '.git*/*' 
-      env:
+       env:
         AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
