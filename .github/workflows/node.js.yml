@@ -24,9 +24,10 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: |
+          node --version
+          npm --version
           npm i
-          npm link @angular/cli
           npm install -g @angular/cli
           ng -v
-          ng build
+          ng build -c 
   
