@@ -30,6 +30,10 @@ jobs:
           npm install -g @angular/cli
           npm install -g @angular-devkit/build-angular
           ng v
-          ng serve 
+    - run: |
+          ng new my-app
+          cd my-app
+          ng serve --open
+
           
   
