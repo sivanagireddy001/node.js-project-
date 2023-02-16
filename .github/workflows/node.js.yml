@@ -31,7 +31,6 @@ jobs:
           npm install -g @angular-devkit/build-angular
           ng v
           npm start
-          angular-github-actions@1.0.0 start
-          ng serve
+          npm run build
           
   
