@@ -30,8 +30,6 @@ jobs:
           npm install -g @angular/cli
           npm install -g @angular-devkit/build-angular
           ng v 
-          ng new sample
-          cd sample 
           ng build
           
   
