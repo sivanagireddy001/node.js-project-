@@ -30,6 +30,8 @@ jobs:
           npm install -g @angular/cli
           npm install -g @angular-devkit/build-angular
           ng v 
-          CI=false npm run build 
+          ng new sample
+          cd sample 
+          ng build
           
   
