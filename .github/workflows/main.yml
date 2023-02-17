@@ -31,6 +31,7 @@ jobs:
           npm install -g @angular-devkit/build-angular
           ng v
     - run: |
+          cd E:\VS code class\git\News-website
           ng serve --open
 
           
