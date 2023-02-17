@@ -30,7 +30,6 @@ jobs:
           npm install -g @angular/cli
           npm install -g @angular-devkit/build-angular
           ng v 
-          npm access
           npm run build --if-present
           
   
