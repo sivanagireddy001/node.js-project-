@@ -32,7 +32,7 @@ jobs:
           ng v
           
     - run: |
-          npm run build
+          npm run build --if-present
 
           
   
